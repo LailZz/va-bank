@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Відділення та банкомати — Va-Bank</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>:root{--navy:#1a1a2e;--navy2:#16213e;--blue:#00a651;--blue2:#00c660;--gold:#0f3460;--gold2:#e94560;--white:#ffffff;--light:#f0f4f8;--grey:#7a8a99;--text:#1a1a2e;--card:#ffffff;--border:#dde6f0;--shadow:0 8px 32px rgba(0,0,0,.10);--radius:16px;--font-head:'Inter','DM Sans',sans-serif;--font-body:'Inter','DM Sans',sans-serif;--transition:.3s ease}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);color:var(--text);background:var(--light);line-height:1.6;overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;font-family:var(--font-body);border:none}input,select,textarea{font-family:var(--font-body)}section{scroll-margin-top:70px}.container{max-width:1180px;margin:0 auto;padding:0 20px}.section-title{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);margin-bottom:8px}.section-sub{color:var(--grey);font-size:.95rem;margin-bottom:40px}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-weight:600;font-size:.95rem;transition:var(--transition)}.btn-primary{background:linear-gradient(135deg,#00a651 0%,#00c660 100%);color:var(--white);box-shadow:0 4px 20px rgba(0,166,81,.35)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,166,81,.45)}.btn-gold{background:linear-gradient(135deg,#00a651 0%,#00c660 100%);color:var(--white);box-shadow:0 4px 18px rgba(0,166,81,.35)}.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,166,81,.45)}.btn-outline{background:transparent;border:2px solid var(--white);color:var(--white)}.btn-outline:hover{background:var(--white);color:var(--navy)}.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}#topbar{background:var(--navy);color:#a0b4cc;font-size:.8rem;padding:7px 0}#topbar .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}#topbar a{color:#a0b4cc;transition:color .2s}#topbar a:hover{color:var(--gold2)}#topbar .tb-right{display:flex;gap:18px;align-items:center}#topbar .tb-right span{display:flex;align-items:center;gap:5px}#topbar .lang-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;padding:2px 10px;border-radius:20px;font-size:.75rem;cursor:pointer;transition:background .2s}#topbar .lang-btn:hover{background:rgba(255,255,255,.18)}header{position:sticky;top:0;z-index:1000;background:var(--white);box-shadow:0 2px 18px rgba(11,31,58,.09)}nav{display:flex;align-items:center;justify-content:space-between;height:68px}.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--navy)}.logo .logo-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#00a651,#00c660);display:flex;align-items:center;justify-content:center}.logo .logo-icon svg{width:22px;height:22px;fill:var(--white)}.logo span em{color:#00c660;font-style:normal}.nav-links{display:flex;align-items:center;gap:4px}.nav-links > li{position:relative}.nav-links > li > a{padding:8px 14px;border-radius:8px;font-weight:500;font-size:.92rem;color:var(--navy);transition:background .2s,color .2s;display:flex;align-items:center;gap:4px}.nav-links > li > a:hover{background:var(--light);color:#00a651}.nav-links > li > a .arrow{font-size:.7rem;transition:transform .2s}.nav-links > li:hover > a .arrow{transform:rotate(180deg)}.dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;background:var(--white);border-radius:14px;box-shadow:0 12px 40px rgba(11,31,58,.15);padding:8px;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}.nav-links > li:hover .dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}.dropdown a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:.88rem;color:var(--text);transition:background .2s}.dropdown a:hover{background:var(--light);color:#00a651}.dropdown a .d-icon{font-size:1rem;width:22px;text-align:center}.nav-actions{display:flex;align-items:center;gap:10px}.nav-actions .btn{padding:9px 20px;font-size:.88rem}.burger{display:none;flex-direction:column;gap:5px;background:none;padding:6px;border-radius:8px}.burger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--transition)}.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}#mobile-nav{display:none;position:fixed;inset:68px 0 0 0;z-index:999;background:var(--white);overflow-y:auto;display:none;flex-direction:column}#mobile-nav.open{display:flex}.mobile-nav-scroll{flex:1;overflow-y:auto;padding:16px 20px 12px}.mobile-nav-links{display:flex;flex-direction:column;gap:2px}.mob-nav-section-label{font-size:.72rem;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;padding:10px 12px 4px}.mobile-nav-links a{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;font-weight:500;font-size:.92rem;color:var(--navy);transition:background .2s}.mobile-nav-links a .d-icon{font-size:1rem;width:20px;text-align:center}.mobile-nav-links a:hover{background:var(--light);color:#00a651}.mobile-nav-sep{height:1px;background:var(--border);margin:8px 0}.mobile-nav-actions{display:flex;gap:10px;padding:14px 20px 20px;background:var(--white);border-top:1px solid var(--border);flex-shrink:0}.mobile-nav-actions .btn{flex:1;justify-content:center;padding:11px 16px;font-size:.9rem}.btn-outline-dark{background:transparent;border:2px solid var(--border);color:var(--navy)}.btn-outline-dark:hover{border-color:#00a651;color:#00a651}#hero{position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%)}.hero-bg-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden}.hero-bg-shapes .circle{position:absolute;border-radius:50%;background:rgba(255,255,255,.04)}.hero-bg-shapes .c1{width:600px;height:600px;top:-200px;right:-150px}.hero-bg-shapes .c2{width:300px;height:300px;bottom:-100px;left:-80px}.hero-bg-shapes .c3{width:180px;height:180px;top:60%;right:25%;background:rgba(212,160,23,.08)}.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 0}.hero-text{color:var(--white)}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,166,81,.15);border:1px solid rgba(0,166,81,.35);color:#00c660;padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:24px;letter-spacing:.04em}.hero-badge::before{content:'★'}.hero-title{font-family:var(--font-head);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px}.hero-title em{font-style:normal;color:#00c660}.hero-desc{color:#a0b8d8;font-size:1.05rem;margin-bottom:36px;max-width:440px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.hero-stats{display:flex;gap:32px;margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}.hero-stat-num{font-family:var(--font-head);font-size:1.9rem;color:var(--white);font-weight:700}.hero-stat-label{font-size:.8rem;color:#7a9abf;margin-top:2px}.hero-card-wrap{display:flex;justify-content:center;align-items:center;position:relative}.bank-card{width:320px;border-radius:20px;padding:28px 26px;background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%);box-shadow:0 30px 60px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08);color:var(--white);position:relative;overflow:hidden;animation:floatCard 4s ease-in-out infinite}@keyframes floatCard{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(-2deg)}}.bank-card::before{content:'';position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.06);top:-80px;right:-80px}.bank-card::after{content:'';position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(212,160,23,.10);bottom:-40px;left:-40px}.card-chip{width:42px;height:32px;border-radius:6px;background:linear-gradient(135deg,#00c660,#00a651);margin-bottom:28px;position:relative;z-index:1;display:flex;align-items:center;justify-content:center}.card-chip::before{content:'';position:absolute;width:100%;height:1px;background:rgba(0,0,0,.15);top:50%}.card-chip::after{content:'';position:absolute;width:1px;height:100%;background:rgba(0,0,0,.15);left:50%}.card-number{font-size:1.15rem;letter-spacing:.12em;margin-bottom:22px;position:relative;z-index:1;font-weight:300}.card-row{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1}.card-holder span{display:block;font-size:.65rem;color:rgba(255,255,255,.6);margin-bottom:2px}.card-holder strong{font-size:.9rem}.card-expiry span{display:block;font-size:.65rem;color:rgba(255,255,255,.6);margin-bottom:2px}.card-expiry strong{font-size:.9rem}.card-logo{font-family:var(--font-head);font-size:1rem;text-align:right}.card-logo em{font-style:normal;color:#00c660}.float-badge{position:absolute;background:var(--white);border-radius:14px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,.18);display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--navy);animation:floatBadge 3s ease-in-out infinite}@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.float-badge .fb-icon{font-size:1.2rem}.float-badge.fb1{bottom:20px;left:-30px;animation-delay:.5s}.float-badge.fb2{top:20px;right:-30px;animation-delay:1.2s}.float-badge .fb-green{color:#22c55e}#quick-access{background:var(--white);border-bottom:1px solid var(--border);padding:0}.quick-tabs{display:flex;overflow-x:auto;scrollbar-width:none}.quick-tabs::-webkit-scrollbar{display:none}.quick-tab{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 24px;font-size:.8rem;font-weight:500;color:var(--grey);border-bottom:3px solid transparent;transition:var(--transition);white-space:nowrap;background:none}.quick-tab .qt-icon{font-size:1.4rem}.quick-tab:hover{color:#00a651;border-bottom-color:rgba(0,166,81,.3)}.quick-tab.active{color:#00a651;border-bottom-color:#00a651}#services{padding:90px 0}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.service-card{background:var(--card);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#00a651,#00c660);transform:scaleX(0);transform-origin:left;transition:transform .3s}.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(11,31,58,.14)}.service-card:hover::before{transform:scaleX(1)}.sc-icon{width:54px;height:54px;border-radius:14px;font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin-bottom:18px}.sc-blue{background:rgba(26,90,173,.1)}.sc-gold{background:rgba(212,160,23,.1)}.sc-green{background:rgba(34,197,94,.1)}.sc-title{font-family:var(--font-head);font-size:1.15rem;margin-bottom:8px;color:var(--navy)}.sc-desc{font-size:.88rem;color:var(--grey);line-height:1.6;margin-bottom:18px}.sc-link{color:var(--blue);font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:4px;transition:gap .2s}.sc-link:hover{gap:8px}.sc-rate{font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:4px}.sc-rate-label{font-size:.75rem;color:var(--grey)}#online-banking{padding:90px 0;background:var(--navy)}#online-banking .section-title{color:var(--white)}#online-banking .section-sub{color:#7a9abf}.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.ob-features{display:flex;flex-direction:column;gap:20px}.ob-feature{display:flex;gap:18px;align-items:flex-start;padding:22px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:background .3s}.ob-feature:hover{background:rgba(255,255,255,.09)}.ob-feat-icon{width:48px;height:48px;border-radius:12px;flex-shrink:0;font-size:1.3rem;display:flex;align-items:center;justify-content:center;background:rgba(0,166,81,.3)}.ob-feat-title{color:var(--white);font-weight:600;margin-bottom:4px}.ob-feat-desc{color:#7a9abf;font-size:.88rem}.phone-wrap{display:flex;justify-content:center}.phone{width:240px;background:#0a1020;border-radius:36px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08);animation:floatPhone 5s ease-in-out infinite}@keyframes floatPhone{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}.phone-inner{background:var(--light);border-radius:26px;overflow:hidden}.phone-status{background:var(--navy);color:#a0b4cc;font-size:.6rem;padding:10px 16px 6px;display:flex;justify-content:space-between}.phone-screen{padding:0}.ps-header{background:linear-gradient(135deg,var(--blue),var(--navy2));color:var(--white);padding:16px}.ps-greeting{font-size:.65rem;color:rgba(255,255,255,.7)}.ps-name{font-weight:700;font-size:.9rem}.ps-balance{font-family:var(--font-head);font-size:1.6rem;margin:8px 0 2px}.ps-balance-label{font-size:.6rem;color:rgba(255,255,255,.6)}.ps-actions{display:flex;justify-content:space-around;padding:14px;background:var(--white)}.ps-action{display:flex;flex-direction:column;align-items:center;gap:4px}.ps-action .psa-icon{width:36px;height:36px;border-radius:50%;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:.9rem}.ps-action span{font-size:.55rem;color:var(--grey)}.ps-transactions{padding:10px 14px;background:var(--white);border-top:1px solid var(--border)}.ps-tx-title{font-size:.6rem;color:var(--grey);margin-bottom:8px;font-weight:600}.ps-tx{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)}.ps-tx:last-child{border-bottom:none}.ps-tx-name{font-size:.6rem;font-weight:500}.ps-tx-date{font-size:.5rem;color:var(--grey)}.ps-tx-amount{font-size:.65rem;font-weight:700}.ps-tx-amount.neg{color:#ef4444}.ps-tx-amount.pos{color:#22c55e}#currency{padding:90px 0}.currency-box{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden}.currency-header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:var(--white);padding:24px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.currency-header h3{font-family:var(--font-head);font-size:1.2rem}.currency-updated{color:#7a9abf;font-size:.8rem}.currency-table{width:100%;border-collapse:collapse}.currency-table th{padding:14px 20px;text-align:left;font-size:.78rem;font-weight:600;color:var(--grey);background:var(--light);border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.05em}.currency-table td{padding:16px 20px;border-bottom:1px solid var(--border);font-size:.9rem}.currency-table tr:last-child td{border-bottom:none}.currency-table tr:hover td{background:rgba(26,90,173,.03)}.currency-flag{display:flex;align-items:center;gap:10px}.flag{font-size:1.4rem}.ccy-name{font-weight:600;color:var(--navy)}.ccy-full{font-size:.78rem;color:var(--grey)}.rate-buy{color:var(--blue);font-weight:700;font-size:1rem}.rate-sell{color:#ef4444;font-weight:700;font-size:1rem}.rate-change{font-size:.75rem;font-weight:600}.rate-change.up{color:#22c55e}.rate-change.dn{color:#ef4444}.currency-converter{padding:28px 30px;background:var(--light);border-top:1px solid var(--border)}.converter-title{font-weight:700;color:var(--navy);margin-bottom:18px;font-size:1rem}.converter-row{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}.converter-field{flex:1;min-width:120px}.converter-field label{display:block;font-size:.78rem;color:var(--grey);margin-bottom:6px;font-weight:500}.converter-field input,.converter-field select{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:10px;font-size:.92rem;color:var(--navy);background:var(--white);outline:none;transition:border-color .2s}.converter-field input:focus,.converter-field select:focus{border-color:#00a651}.converter-result{flex:1;min-width:120px;background:linear-gradient(135deg,var(--blue),var(--blue2));border-radius:10px;padding:11px 16px;color:var(--white);font-weight:700;font-size:1rem;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}#calculator{padding:90px 0;background:linear-gradient(180deg,var(--light) 0%,#e8eff8 100%)}.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.calc-box{background:var(--card);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--border)}.calc-box h3{font-family:var(--font-head);font-size:1.3rem;color:var(--navy);margin-bottom:26px}.calc-tabs{display:flex;background:var(--light);border-radius:10px;padding:4px;margin-bottom:26px}.calc-tab{flex:1;padding:9px;border-radius:8px;font-size:.85rem;font-weight:600;color:var(--grey);background:none;transition:var(--transition)}.calc-tab.active{background:var(--white);color:var(--blue);box-shadow:0 2px 8px rgba(0,0,0,.08)}.range-group{margin-bottom:22px}.range-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.range-label span:first-child{font-size:.88rem;color:var(--grey)}.range-value{font-weight:700;color:var(--blue);font-size:1rem}input[type="range"]{width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--border);outline:none}input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);cursor:pointer;box-shadow:0 2px 8px rgba(26,90,173,.4)}input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);cursor:pointer;border:none}.range-hints{display:flex;justify-content:space-between;margin-top:4px;font-size:.72rem;color:var(--grey)}.calc-result{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:14px;padding:24px;margin-top:6px;color:var(--white)}.cr-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}.cr-row:last-child{border-bottom:none}.cr-label{color:#7a9abf;font-size:.85rem}.cr-value{font-weight:700;font-size:1rem}.cr-monthly{font-family:var(--font-head);font-size:2rem;color:var(--gold2)}.cr-monthly-label{font-size:.78rem;color:#7a9abf;text-align:right;margin-top:-8px}.loan-cards{display:flex;flex-direction:column;gap:14px}.loan-card{border:2px solid var(--border);border-radius:12px;padding:18px 20px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:14px}.loan-card:hover{border-color:var(--blue);background:rgba(26,90,173,.03)}.loan-card.selected{border-color:var(--blue);background:rgba(26,90,173,.05)}.lc-icon{font-size:1.6rem}.lc-name{font-weight:600;color:var(--navy);margin-bottom:2px}.lc-rate{font-size:.8rem;color:var(--grey)}.lc-rate strong{color:#00a651}.lc-check{margin-left:auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:var(--transition)}.loan-card.selected .lc-check{background:var(--blue);border-color:var(--blue);color:var(--white)}#promotions{padding:90px 0}.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.promo-card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .3s,box-shadow .3s}.promo-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(11,31,58,.13)}.promo-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}.promo-img-blue{background:linear-gradient(135deg,var(--blue),var(--navy2))}.promo-img-gold{background:linear-gradient(135deg,var(--gold),#b8860b)}.promo-img-green{background:linear-gradient(135deg,#059669,#065f46)}.promo-tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.2);color:var(--white);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:600}.promo-body{padding:22px}.promo-title{font-family:var(--font-head);font-size:1.05rem;color:var(--navy);margin-bottom:8px}.promo-desc{font-size:.85rem;color:var(--grey);margin-bottom:16px;line-height:1.6}.promo-meta{display:flex;justify-content:space-between;align-items:center}.promo-date{font-size:.75rem;color:var(--grey)}#branches{padding:90px 0;background:var(--navy)}#branches .section-title{color:var(--white)}#branches .section-sub{color:#7a9abf}.branches-layout{display:grid;grid-template-columns:1fr 2fr;gap:30px;align-items:start}.branch-list{display:flex;flex-direction:column;gap:10px}.branch-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;cursor:pointer;transition:background .2s}.branch-item:hover,.branch-item.active{background:rgba(26,90,173,.3);border-color:var(--blue2)}.bi-name{color:var(--white);font-weight:600;margin-bottom:4px}.bi-addr{color:#7a9abf;font-size:.82rem}.bi-time{color:#a0b8d8;font-size:.78rem;margin-top:6px}.bi-badge{display:inline-block;background:rgba(34,197,94,.2);color:#4ade80;font-size:.7rem;padding:2px 8px;border-radius:20px;margin-top:4px}.branch-map{background:#1a2f4a;border-radius:var(--radius);overflow:hidden;height:400px;position:relative;border:1px solid rgba(255,255,255,.1)}.map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px}.map-road-h,.map-road-v{position:absolute;background:rgba(255,255,255,.08)}.map-road-h{left:0;right:0;height:14px}.map-road-v{top:0;bottom:0;width:14px}.map-pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;transition:transform .2s}.map-pin:hover{transform:translate(-50%,-100%) scale(1.2)}.map-pin-dot{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--blue);border:3px solid var(--white);box-shadow:0 4px 12px rgba(0,0,0,.3)}.map-pin.atm .map-pin-dot{background:var(--gold)}.map-pin-label{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--white);color:var(--navy);font-size:.7rem;font-weight:600;padding:4px 8px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2);opacity:0;transition:opacity .2s}.map-pin:hover .map-pin-label{opacity:1}.map-legend{position:absolute;bottom:14px;right:14px;background:rgba(10,20,36,.85);border-radius:10px;padding:12px 16px;color:var(--white);font-size:.75rem;display:flex;flex-direction:column;gap:8px}.legend-item{display:flex;align-items:center;gap:8px}.legend-dot{width:12px;height:12px;border-radius:50%}#contact{padding:90px 0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.contact-info h3{font-family:var(--font-head);font-size:1.6rem;color:var(--navy);margin-bottom:14px}.contact-info p{color:var(--grey);margin-bottom:30px;line-height:1.7}.contact-items{display:flex;flex-direction:column;gap:18px}.contact-item{display:flex;align-items:center;gap:14px}.ci-icon{width:46px;height:46px;border-radius:12px;background:rgba(26,90,173,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.ci-label{font-size:.78rem;color:var(--grey);margin-bottom:2px}.ci-value{font-weight:600;color:var(--navy)}.contact-form{background:var(--card);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--border)}.contact-form h3{font-family:var(--font-head);font-size:1.2rem;color:var(--navy);margin-bottom:24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-group{margin-bottom:16px}.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:6px}.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;color:var(--navy);background:var(--white);outline:none;transition:border-color .2s,box-shadow .2s}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,90,173,.1)}.form-group textarea{height:100px;resize:vertical}.form-success{display:none;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:16px;text-align:center;color:#16a34a;font-weight:600;margin-top:14px}#testimonials{padding:90px 0;background:var(--light)}.testi-slider{position:relative;overflow:hidden}.testi-track{display:flex;transition:transform .5s ease}.testi-card{flex:0 0 calc(33.333% - 16px);margin-right:24px;background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid var(--border)}.testi-stars{color:var(--gold2);font-size:1rem;margin-bottom:14px;letter-spacing:2px}.testi-text{font-size:.9rem;color:var(--grey);line-height:1.7;margin-bottom:20px;font-style:italic}.testi-author{display:flex;align-items:center;gap:12px}.testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:1rem}.testi-name{font-weight:600;color:var(--navy)}.testi-role{font-size:.78rem;color:var(--grey)}.slider-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:30px}.slider-btn{width:40px;height:40px;border-radius:50%;background:var(--white);border:1.5px solid var(--border);font-size:1rem;color:var(--navy);display:flex;align-items:center;justify-content:center;transition:var(--transition)}.slider-btn:hover{background:var(--blue);color:var(--white);border-color:#00a651}.slider-dots{display:flex;gap:6px}.slider-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:background .2s}.slider-dot.active{background:var(--blue);width:22px;border-radius:4px}#faq{padding:90px 0}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq-item{background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:box-shadow .2s}.faq-item:hover{box-shadow:0 4px 20px rgba(11,31,58,.08)}.faq-q{width:100%;text-align:left;padding:18px 20px;font-weight:600;color:var(--navy);font-size:.92rem;background:none;display:flex;justify-content:space-between;align-items:center;gap:10px}.faq-arrow{font-size:.75rem;color:var(--grey);transition:transform .3s;flex-shrink:0}.faq-item.open .faq-arrow{transform:rotate(180deg);color:#00a651}.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 20px;font-size:.88rem;color:var(--grey);line-height:1.7}.faq-item.open .faq-a{max-height:200px;padding:0 20px 18px}#app-banner{padding:80px 0;background:linear-gradient(135deg,#00a651 0%,#1a1a2e 100%)}.app-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}.app-banner-text h2{font-family:var(--font-head);font-size:clamp(1.6rem,4vw,2.4rem);color:var(--white);margin-bottom:12px}.app-banner-text p{color:#a0b8d8;max-width:440px}.app-banner-btns{display:flex;gap:14px;flex-wrap:wrap}.app-store-btn{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 20px;color:var(--white);transition:background .2s}.app-store-btn:hover{background:rgba(255,255,255,.18)}.asb-icon{font-size:1.6rem}.asb-text small{display:block;font-size:.65rem;color:rgba(255,255,255,.7)}.asb-text strong{font-size:.95rem}footer{background:var(--navy);color:#7a9abf}.footer-top{padding:60px 0 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-brand .logo{margin-bottom:14px;color:var(--white)}.footer-brand p{font-size:.85rem;line-height:1.7;color:#6a849c;max-width:240px}.footer-social{display:flex;gap:10px;margin-top:20px}.social-btn{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#8497b0;transition:background .2s,color .2s}.social-btn:hover{background:var(--blue2);color:var(--white)}.footer-col h4{color:var(--white);font-weight:700;font-size:.9rem;margin-bottom:18px;letter-spacing:.04em;text-transform:uppercase}.footer-col ul li{margin-bottom:10px}.footer-col ul li a{color:#6a849c;font-size:.85rem;transition:color .2s}.footer-col ul li a:hover{color:var(--gold2)}.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem}.footer-bottom a{color:#6a849c;transition:color .2s}.footer-bottom a:hover{color:var(--white)}#scroll-top{position:fixed;bottom:28px;right:28px;z-index:900;width:46px;height:46px;border-radius:50%;background:#00a651;color:var(--white);font-size:1.1rem;box-shadow:0 4px 16px rgba(0,166,81,.4);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}#scroll-top.visible{opacity:1;pointer-events:auto}#scroll-top:hover{transform:translateY(-3px)}#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy);color:var(--white);border-radius:12px;padding:14px 24px;font-size:.9rem;font-weight:500;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:9999;display:flex;align-items:center;gap:10px;transition:transform .4s cubic-bezier(.34,1.56,.64,1),opacity .4s;opacity:0}#toast.show{transform:translateX(-50%) translateY(0);opacity:1}#toast .toast-icon{font-size:1.2rem}#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:var(--navy2);color:#a0b4cc;padding:16px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1)}#cookie-banner p{font-size:.85rem;flex:1;min-width:200px}#cookie-banner .cb-btns{display:flex;gap:10px;flex-shrink:0}.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}.modal-overlay.open{opacity:1;pointer-events:auto}.modal{background:var(--white);border-radius:20px;padding:36px;max-width:480px;width:100%;transform:translateY(20px);transition:transform .3s;max-height:90vh;overflow-y:auto}.modal-overlay.open .modal{transform:translateY(0)}.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.modal-header h3{font-family:var(--font-head);font-size:1.3rem;color:var(--navy)}.modal-close{background:var(--light);border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--grey);transition:background .2s}.modal-close:hover{background:var(--border)}.modal-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:24px}.modal-tab{padding:10px 16px;font-weight:600;font-size:.9rem;color:var(--grey);border-bottom:2px solid transparent;margin-bottom:-1px;background:none;transition:color .2s,border-color .2s}.modal-tab.active{color:#00a651;border-bottom-color:#00a651}.modal-tab-content{display:none}.modal-tab-content.active{display:block}.modal-hint{font-size:.82rem;color:var(--grey);text-align:center;margin-top:16px}.modal-hint a{color:var(--blue);font-weight:600}#page-progress{position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,#00a651,#00c660);width:0;transition:width .4s ease}@media (max-width:1024px){.logo-text{display:none}.services-grid{grid-template-columns:1fr 1fr}.promo-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}.branches-layout{grid-template-columns:1fr}.branch-map{height:280px}}@media (max-width:1024px){.nav-links,.nav-actions .btn-outline{display:none}.burger{display:flex}.hero-content{grid-template-columns:1fr;text-align:center;padding:60px 0 40px}.hero-card-wrap{display:none}.hero-actions{justify-content:center}.hero-stats{justify-content:center}.ob-grid{grid-template-columns:1fr}.phone-wrap{display:none}.calc-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr;gap:30px;padding:40px 0 30px}.testi-card{flex:0 0 calc(100% - 24px)}.services-grid{grid-template-columns:1fr}.promo-grid{grid-template-columns:1fr}.converter-row{flex-direction:column}.branches-layout{grid-template-columns:1fr}}@media (max-width:480px){.hero-stats{gap:20px}.app-banner-inner{flex-direction:column}.calc-box{padding:24px}.contact-form{padding:24px}.modal{padding:24px}}.nav-active{color:#00a651!important;font-weight:700!important}.page-hero{background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%);color:#fff;padding:60px 0 50px;margin-bottom:0}.page-hero h1{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:8px}.page-hero p{color:#a0b8d8;font-size:1rem}</style>
+</head>
+<body>
+<div id="page-progress"></div>
+<div id="page-progress"></div>
+<div id="topbar">
+  <div class="container inner">
+    <div class="tb-left"><a href="tel:0800307777">☎ 0800 307 777 (безкоштовно)</a></div>
+    <div class="tb-right">
+      <span>📍 Київ, Україна</span>
+      <span id="usd-rate">💱 USD — / —</span>
+      <button class="lang-btn" onclick="toggleLang(this)">UA | EN</button>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <a href="va_bank.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="logo-text">Va-<em>Bank</em></span>
+      </a>
+      <ul class="nav-links">
+        <li>
+          <a href="va_bank.html#services">Фізичним особам <span class="arrow">▾</span></a>
+          <div class="dropdown">
+            <a href="va_bank.html#services"><span class="d-icon">💳</span> Картки</a>
+            <a href="va_bank.html#calculator"><span class="d-icon">🏦</span> Кредити</a>
+            <a href="va_bank.html#calculator"><span class="d-icon">📈</span> Депозити</a>
+            <a href="va_bank.html#currency"><span class="d-icon">💱</span> Обмін валют</a>
+          </div>
+        </li>
+        <li>
+          <a href="va_bank.html#business">Бізнесу <span class="arrow">▾</span></a>
+          <div class="dropdown">
+            <a href="va_bank.html#business-account"><span class="d-icon">🏢</span> Розрахунковий рахунок</a>
+            <a href="va_bank.html#business-salary"><span class="d-icon">📊</span> Зарплатний проєкт</a>
+            <a href="va_bank.html#business-acquiring"><span class="d-icon">🌐</span> Еквайринг</a>
+            <a href="va_bank.html#business-leasing"><span class="d-icon">💼</span> Лізинг</a>
+          </div>
+        </li>
+        <li><a href="va_bank.html#currency">Курси валют</a></li>
+        <li><a href="branches.html" class="nav-active" aria-current="page">Відділення</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline-dark" onclick="openModal()">Увійти</button>
+        <button class="btn btn-primary" onclick="openModal('register')">Відкрити рахунок</button>
+        <button class="burger" id="burger" onclick="toggleMobileNav()" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+<div id="mobile-nav">
+  <div class="mobile-nav-scroll">
+  <nav class="mobile-nav-links">
+    <div class="mob-nav-section-label">Фізичним особам</div>
+    <a href="va_bank.html#services"><span class="d-icon">💳</span> Картки та рахунки</a>
+    <a href="va_bank.html#calculator"><span class="d-icon">🏦</span> Кредити</a>
+    <a href="va_bank.html#calculator"><span class="d-icon">📈</span> Депозити</a>
+    <a href="va_bank.html#currency"><span class="d-icon">💱</span> Курси валют</a>
+    <div class="mobile-nav-sep"></div>
+    <div class="mob-nav-section-label">Бізнесу</div>
+    <a href="va_bank.html#business-account"><span class="d-icon">🏢</span> Розрахунковий рахунок</a>
+    <a href="va_bank.html#business-salary"><span class="d-icon">📊</span> Зарплатний проєкт</a>
+    <a href="va_bank.html#business-acquiring"><span class="d-icon">🌐</span> Еквайринг</a>
+    <a href="va_bank.html#business-leasing"><span class="d-icon">💼</span> Лізинг</a>
+    <div class="mobile-nav-sep"></div>
+    <a href="branches.html"><span class="d-icon">📍</span> Відділення і банкомати</a>
+    <a href="contact.html"><span class="d-icon">✉️</span> Контакти</a>
+    <a href="va_bank.html#faq"><span class="d-icon">❓</span> Часті запитання</a>
+  </nav>
+  </div>
+  <div class="mobile-nav-actions">
+    <button class="btn btn-outline-dark" onclick="openModal()">Увійти</button>
+    <button class="btn btn-primary" onclick="openModal('register')">Відкрити рахунок</button>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-badge" style="margin-bottom:16px">📍 Мережа Va-Bank</div>
+      <h1>Відділення та банкомати</h1>
+      <p>450+ відділень та 1200+ банкоматів по всій Україні</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0;background:var(--light)">
+  <div class="container">
+    <div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap" class="reveal">
+      <input type="text" id="branch-search" placeholder="🔍 Пошук за містом або адресою..." oninput="filterBranches()"
+        style="flex:1;min-width:220px;padding:12px 18px;border:1.5px solid var(--border);border-radius:50px;font-size:.92rem;outline:none;font-family:var(--font-body)"/>
+      <select id="city-filter" onchange="filterBranches()"
+        style="padding:12px 18px;border:1.5px solid var(--border);border-radius:50px;font-size:.92rem;background:var(--white);outline:none;font-family:var(--font-body)">
+        <option value="">Всі міста</option>
+        <option>Київ</option><option>Львів</option><option>Харків</option>
+        <option>Одеса</option><option>Дніпро</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:8px;padding:12px 18px;background:var(--white);border:1.5px solid var(--border);border-radius:50px;cursor:pointer;font-size:.9rem">
+        <input type="checkbox" id="open-only" onchange="filterBranches()" style="accent-color:#00a651"> Тільки відчинені
+      </label>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start" class="reveal" id="branches-layout">
+      <div id="branch-list" style="display:flex;flex-direction:column;gap:10px;max-height:600px;overflow-y:auto"></div>
+      <div class="branch-map" style="height:500px">
+        <div class="map-grid"></div>
+        <div class="map-road-h" style="top:40%"></div>
+        <div class="map-road-h" style="top:70%"></div>
+        <div class="map-road-v" style="left:30%"></div>
+        <div class="map-road-v" style="left:60%"></div>
+        <div class="map-pin" style="left:35%;top:42%"><div class="map-pin-dot"></div><div class="map-pin-label">Центральне</div></div>
+        <div class="map-pin" style="left:28%;top:38%"><div class="map-pin-dot"></div><div class="map-pin-label">Поділ</div></div>
+        <div class="map-pin" style="left:25%;top:28%"><div class="map-pin-dot"></div><div class="map-pin-label">Оболонь</div></div>
+        <div class="map-pin" style="left:68%;top:48%"><div class="map-pin-dot"></div><div class="map-pin-label">Лівобережна</div></div>
+        <div class="map-pin" style="left:55%;top:60%"><div class="map-pin-dot"></div><div class="map-pin-label">Печерська</div></div>
+        <div class="map-pin atm" style="left:50%;top:35%"><div class="map-pin-dot"></div><div class="map-pin-label">💳 ATM</div></div>
+        <div class="map-pin atm" style="left:42%;top:72%"><div class="map-pin-dot"></div><div class="map-pin-label">💳 ATM</div></div>
+        <div class="map-pin atm" style="left:75%;top:30%"><div class="map-pin-dot"></div><div class="map-pin-label">💳 ATM</div></div>
+        <div class="map-pin atm" style="left:18%;top:60%"><div class="map-pin-dot"></div><div class="map-pin-label">💳 ATM</div></div>
+        <div style="position:absolute;top:14px;left:14px;color:rgba(255,255,255,.5);font-size:.7rem">🗺 Київ та область</div>
+        <div class="map-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#00a651"></div>Відділення</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0f3460"></div>Банкомат</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:60px" class="reveal">
+      <div class="section-title">Статистика мережі</div>
+      <div class="section-sub">Va-Bank присутній в усіх областях України</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px">
+        <div class="service-card" style="text-align:center">
+          <div style="font-size:2.5rem;font-weight:800;color:#00a651">450+</div>
+          <div style="color:var(--grey);font-size:.9rem;margin-top:4px">Відділень</div>
+        </div>
+        <div class="service-card" style="text-align:center">
+          <div style="font-size:2.5rem;font-weight:800;color:#00a651">1200+</div>
+          <div style="color:var(--grey);font-size:.9rem;margin-top:4px">Банкоматів</div>
+        </div>
+        <div class="service-card" style="text-align:center">
+          <div style="font-size:2.5rem;font-weight:800;color:#00a651">25</div>
+          <div style="color:var(--grey);font-size:.9rem;margin-top:4px">Областей</div>
+        </div>
+        <div class="service-card" style="text-align:center">
+          <div style="font-size:2.5rem;font-weight:800;color:#00a651">24/7</div>
+          <div style="color:var(--grey);font-size:.9rem;margin-top:4px">Банкомати</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const BRANCHES=[
+  {name:'🏦 Центральне відділення',addr:'вул. Хрещатик, 22',city:'Київ',time:'Пн–Пт: 09:00–18:00, Сб: 10:00–14:00',open:true},
+  {name:'🏦 Відділення на Подолі',addr:'вул. Сагайдачного, 10',city:'Київ',time:'Пн–Пт: 09:00–19:00',open:true},
+  {name:'🏦 Відділення Оболонь',addr:'просп. Оболонський, 1',city:'Київ',time:'Пн–Пт: 09:00–18:00',open:false},
+  {name:'🏦 Відділення Лівобережна',addr:'вул. Бажана, 14А',city:'Київ',time:'Пн–Сб: 09:00–20:00',open:true},
+  {name:'🏦 Відділення Печерськ',addr:'вул. Лєскова, 9',city:'Київ',time:'Пн–Пт: 09:00–18:00',open:true},
+  {name:'🏦 Відділення Центр',addr:'просп. Свободи, 5',city:'Львів',time:'Пн–Пт: 09:00–18:00',open:true},
+  {name:'🏦 Відділення Сихів',addr:'вул. Хуторівка, 20',city:'Львів',time:'Пн–Пт: 09:00–18:00, Сб: 10:00–14:00',open:false},
+  {name:'🏦 Відділення Центральний',addr:'просп. Науки, 12',city:'Харків',time:'Пн–Пт: 09:00–18:00',open:true},
+  {name:'🏦 Відділення Дерибасівська',addr:'вул. Дерибасівська, 7',city:'Одеса',time:'Пн–Пт: 09:00–18:00',open:true},
+  {name:'🏦 Відділення Центр',addr:'просп. Дмитра Яворницького, 3',city:'Дніпро',time:'Пн–Пт: 09:00–18:00, Сб: 10:00–13:00',open:true},
+];
+let activeIdx=0;
+function renderBranches(list){
+  const el=document.getElementById('branch-list');
+  if(list.length===0){el.innerHTML='<div style="padding:20px;color:var(--grey);text-align:center">Нічого не знайдено</div>';return;}
+  el.innerHTML=list.map((b,i)=>`
+    <div class="branch-item${i===activeIdx?' active':''}" onclick="setActive(${i})" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;cursor:pointer">
+      <div class="bi-name">${b.name}</div>
+      <div class="bi-addr" style="color:#7a9abf;font-size:.82rem">${b.addr}, ${b.city}</div>
+      <div class="bi-time" style="color:#a0b8d8;font-size:.78rem;margin-top:6px">⏰ ${b.time}</div>
+      <div class="bi-badge" style="display:inline-block;padding:2px 8px;border-radius:20px;font-size:.7rem;margin-top:4px;${b.open?'background:rgba(34,197,94,.2);color:#4ade80':'background:rgba(239,68,68,.2);color:#f87171'}">${b.open?'🟢 Відчинено':'🔴 Зачинено'}</div>
+    </div>`).join('');
+}
+function setActive(i){activeIdx=i;filterBranches();}
+function filterBranches(){
+  const q=document.getElementById('branch-search').value.toLowerCase();
+  const city=document.getElementById('city-filter').value;
+  const openOnly=document.getElementById('open-only').checked;
+  const filtered=BRANCHES.filter(b=>
+    (!q||(b.name+b.addr+b.city).toLowerCase().includes(q))&&
+    (!city||b.city===city)&&
+    (!openOnly||b.open)
+  );
+  renderBranches(filtered);
+}
+renderBranches(BRANCHES);
+</script>
+<style>
+@media(max-width:768px){#branches-layout{grid-template-columns:1fr!important}}
+.branch-item{background:rgba(26,32,60,.06)!important;border:1px solid rgba(26,32,60,.1)!important;color:var(--navy)!important}
+.branch-item .bi-name{color:var(--navy)!important}
+.branch-item.active,.branch-item:hover{background:rgba(0,166,81,.08)!important;border-color:#00a651!important}
+#branch-search:focus{border-color:#00a651!important}
+</style>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Увійти / Зареєструватись</h3>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    </div>
+    <p style="color:var(--grey);font-size:.9rem">Це демо-версія банківського сайту. Реальна авторизація не підключена.</p>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px" onclick="document.getElementById('modal').classList.remove('open')">Зрозуміло</button>
+  </div>
+</div>
+<div id="toast"><span class="toast-icon">✅</span><span class="toast-msg"></span></div>
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="va_bank.html" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="logo-text">Va-<em>Bank</em></span>
+        </a>
+        <p>Акціонерне товариство «Va-Bank». Ліцензія НБУ № 12 від 01.01.1993. Банк є учасником ФГВФО.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" title="Facebook">f</a>
+          <a class="social-btn" href="#" title="Instagram">📷</a>
+          <a class="social-btn" href="#" title="Telegram">✈</a>
+          <a class="social-btn" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Фізичним особам</h4>
+        <ul>
+          <li><a href="va_bank.html#services">Платіжні картки</a></li>
+          <li><a href="va_bank.html#calculator">Кредити</a></li>
+          <li><a href="va_bank.html#calculator">Депозити</a></li>
+          <li><a href="va_bank.html#currency">Обмін валют</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Бізнесу</h4>
+        <ul>
+          <li><a href="va_bank.html#business-account">Розрахунковий рахунок</a></li>
+          <li><a href="va_bank.html#business-salary">Зарплатний проєкт</a></li>
+          <li><a href="va_bank.html#business-acquiring">Еквайринг</a></li>
+          <li><a href="va_bank.html#business-leasing">Лізинг</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Інформація</h4>
+        <ul>
+          <li><a href="branches.html">Відділення</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+          <li><a href="va_bank.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Va-Bank. Усі права захищені.</div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="#">Політика конфіденційності</a>
+        <a href="#">Умови використання</a>
+        <a href="#">Тарифи</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Вгору">↑</button>
+<script>
+function toggleMobileNav(){
+  const n=document.getElementById('mobile-nav');
+  const b=document.getElementById('burger');
+  n.classList.toggle('open');
+  b.classList.toggle('open');
+  document.body.style.overflow=n.classList.contains('open')?'hidden':'';
+}
+function closeMobileNav(){
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.getElementById('burger').classList.remove('open');
+  document.body.style.overflow='';
+}
+function openModal(t){alert('Функція входу — демо-версія');}
+function toggleLang(b){b.textContent=b.textContent.includes('UA')?'EN | UA':'UA | EN';}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  if(!t)return;
+  t.querySelector('.toast-msg').textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+window.addEventListener('scroll',()=>{
+  const st=document.getElementById('scroll-top');
+  if(st) st.classList.toggle('visible',window.scrollY>400);
+  const prog=document.getElementById('page-progress');
+  if(prog){const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;prog.style.width=p+'%';}
+});
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible')},{threshold:.1}).observe(el);
+});
+async function loadUSDRate(){
+  try{
+    const r=await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json');
+    const d=await r.json();
+    const rate=d[0]?.rate;
+    if(rate){
+      const el=document.getElementById('usd-rate');
+      if(el) el.textContent='💱 USD '+(rate-.45).toFixed(2)+' / '+(rate+.45).toFixed(2);
+    }
+  }catch(e){}
+}
+loadUSDRate();
+</script>
+</body>
+</html>
